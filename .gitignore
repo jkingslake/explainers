@@ -1,0 +1,9 @@
+.venv/
+.cache/
+build/
+media/
+papers/
+__pycache__/
+*.pyc
+# drafts are scratch; finals in videos/<slug>/out/ are committed
+**/out/*-draft.*

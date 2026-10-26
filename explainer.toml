@@ -1,0 +1,34 @@
+# Channel-wide settings. Every video reads this file.
+
+[channel]
+# Shown on every title card ("An explainer by ...") and end card.
+name = "J. Kingslake"
+tagline = "Papers, explained."
+
+[voice]
+# Narration engine:
+#   "kokoro"     free, offline, good quality (default; model downloaded by scripts/setup.sh)
+#   "elevenlabs" best quality, can be a clone of your own voice; needs ELEVENLABS_API_KEY
+#   "openai"     needs OPENAI_API_KEY
+#   "silent"     no audio, timings estimated from word count (fast layout drafts)
+engine = "kokoro"
+speed = 1.0
+# Kokoro voices: af_heart, af_bella, bf_emma, am_michael, am_fenrir, bm_george, bm_fable ...
+kokoro_voice = "am_michael"
+elevenlabs_voice_id = ""          # e.g. the ID of your cloned voice
+elevenlabs_model = "eleven_multilingual_v2"
+openai_voice = "onyx"
+openai_model = "gpt-4o-mini-tts"
+
+[video]
+# Manim quality: "l" 480p, "m" 720p, "h" 1080p, "k" 4K.
+final_quality = "h"
+draft_quality = "l"
+fps = 30                          # final renders; 3b1b uses 60 (twice the render time)
+target_minutes = 12
+
+[mascot]
+# The little towel that plays the role of 3b1b's pi creatures.
+name = "Towel"
+color = "#5CD0B3"
+stripe_color = "#F7F2E8"

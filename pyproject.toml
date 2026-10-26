@@ -1,0 +1,18 @@
+[project]
+name = "explainers"
+version = "0.1.0"
+description = "3Blue1Brown-style explainer videos of research papers, generated with Claude Code + Manim"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+    "manim>=0.19",
+    "kokoro-onnx>=0.4",
+    "soundfile>=0.12",
+    "numpy>=2.0",
+    "scipy>=1.13",
+    "sympy>=1.13",
+    "requests>=2.32",
+    "pymupdf>=1.24",
+]
+
+[tool.uv]
+package = false
