@@ -32,3 +32,20 @@ target_minutes = 12
 name = "Towel"
 color = "#5CD0B3"
 stripe_color = "#F7F2E8"
+
+[youtube]
+# Finished videos are uploaded with `python tools/youtube_upload.py upload videos/<slug>`;
+# the /explain pipeline does it automatically once credentials are set up
+# (README, "Publishing to YouTube"). Set enabled = false to stop automatic uploads.
+enabled = true
+# private | unlisted | public. YouTube forces uploads from API projects that haven't passed
+# its API audit to private, so review and publish them in YouTube Studio.
+privacy = "private"
+category_id = 27                  # Education (28 = Science & Technology)
+language = "en"
+tags = ["science", "explainer", "research paper", "maths", "manim"]
+playlist_id = ""                  # optional: add every upload to this playlist
+# Altered or synthetic content disclosure. "auto" discloses when the narration is
+# ElevenLabs (which may be a clone of a real voice); set true or false to override.
+synthetic_media = "auto"
+description_footer = "Explained by {channel}. Animated with Manim; script and animation drafted with Claude; narrated by a text-to-speech voice."

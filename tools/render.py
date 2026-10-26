@@ -170,8 +170,18 @@ def main() -> None:
         for i, (a, b, text) in enumerate(cues, 1):
             f.write(f"{i}\n{srt_time(a)} --> {srt_time(b)}\n{text}\n\n")
 
+    # YouTube ignores chapter lists containing a chapter under 10 s: fold short ones
+    # (title card, credits) into their neighbour.
+    ends = [t for t, _ in chapters[1:]] + [offset]
+    kept = []
+    for (t, title), end in zip(chapters, ends):
+        if kept and end - t < 10:
+            continue
+        kept.append((t, title))
+    if len(kept) > 1 and offset - kept[-1][0] < 10:
+        kept.pop()
     with open(out_dir / f"{stem}.chapters.txt", "w") as f:
-        for t, title in chapters:
+        for t, title in kept:
             f.write(f"{int(t // 60)}:{int(t % 60):02d} {title}\n")
 
     size = final.stat().st_size / 1e6

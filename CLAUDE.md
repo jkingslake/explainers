@@ -18,6 +18,7 @@ examples/pilot/         2-minute reference video; read it before writing scenes
 tools/fetch_paper.py    paper → papers/<slug>/ (pdf, text, page images, LaTeX source)
 tools/render.py         parallel render + stitch → videos/<slug>/out/<slug>.mp4 + .srt + chapters
 tools/frames.py         contact sheets of a render, for visual review
+tools/youtube_upload.py upload a finished video to YouTube (title/description from its README)
 scripts/setup.sh        installs everything (apt, uv env, Kokoro TTS model)
 inbox/                  drop PDFs here (e.g. paywalled papers)
 papers/<slug>/          fetched material (git-ignored)

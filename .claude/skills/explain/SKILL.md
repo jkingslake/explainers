@@ -174,6 +174,26 @@ section listing anything the video glosses over.
   `out/<slug>.mp4` + `.srt` + `.chapters.txt` when the mp4 is under 95 MB; above that,
   render at `--quality m` for the committed copy). Push to the working branch.
 * Send the final mp4 to the user (SendUserFile) when that tool is available.
+
+## Phase 8: Publish to YouTube
+
+The channel owner has asked for finished videos to be uploaded automatically. If
+`[youtube] enabled = true` in `explainer.toml`:
+
+```bash
+python tools/youtube_upload.py check                       # credentials available?
+python tools/youtube_upload.py upload videos/<slug> --dry-run   # review title, description, tags
+python tools/youtube_upload.py upload videos/<slug>        # uploads at [youtube] privacy (default private)
+```
+
+* Title, description and tags come from `videos/<slug>/README.md` (its first heading, the
+  "YouTube description" section with `CHAPTERS` and an optional `Tags:` line). Keep that section
+  in the paper's framing too.
+* Upload at the configured privacy; never raise it to public yourself unless the user asks.
+* Commit the `youtube.json` it writes, and give the user the link and the Studio link.
+* If `check` reports missing credentials, skip the upload and tell the user once that they can
+  enable it by following README, "Publishing to YouTube". Never ask for tokens in chat.
+* Never upload a video twice; `youtube.json` records an upload and the tool refuses a second.
 * Finish with: runtime, chapter list, the aha moments covered, and anything the user
   should check (simplifications, places where the reproduction differed from the paper,
   errors found in the paper).

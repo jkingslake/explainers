@@ -25,6 +25,8 @@ Paper: https://doi.org/10.3189/2015JoG14J158
 
 CHAPTERS
 
+Tags: glaciology, supraglacial lakes, ice sheets, Greenland, Antarctica, meltwater, lake drainage, Journal of Glaciology
+
 ## Files
 
 * `analysis.md`: the full model, derivations (checked in `checks.py`), reproduction notes and typos found

@@ -66,6 +66,40 @@ tried. Download the PDF yourself, put it in `inbox/`, and run `/explain inbox/<f
 * `video.target_minutes` and `video.fps`.
 * `[mascot]`: the towel's colours.
 
+## Publishing to YouTube
+
+Once set up, `/explain` uploads every finished video to your channel as **private** (with its
+title, description, chapters, tags and subtitles) and records the link in
+`videos/<slug>/youtube.json`. You review it in YouTube Studio and press publish. Settings are in
+the `[youtube]` table of `explainer.toml`.
+
+One-time setup (about 10 minutes):
+
+1. In the [Google Cloud console](https://console.cloud.google.com/), create a project and enable
+   the **YouTube Data API v3**.
+2. Under **Google Auth Platform → Audience**, choose External, add your Google account as a test
+   user, then click **Publish app** (sign-ins for apps left in "Testing" expire after 7 days). You
+   don't need Google's verification for your own channel; you'll see an "unverified app" warning
+   when you sign in, which you can click through.
+3. Under **Clients**, create an OAuth client of type **TVs and Limited Input devices**.
+4. In the cloud environment's settings (environment menu in the session title bar → Edit), add
+   environment variables `YOUTUBE_CLIENT_ID` and `YOUTUBE_CLIENT_SECRET` with the client's values.
+5. Start a new session and ask Claude to sign in to YouTube. It runs
+   `python tools/youtube_upload.py auth` and shows you a link and a code: open the link on your phone,
+   enter the code and choose your channel.
+6. To keep that sign-in for future sessions, open `.cache/youtube_token.json` and copy its
+   `refresh_token` into the environment's settings as `YOUTUBE_REFRESH_TOKEN`.
+
+Notes:
+* YouTube keeps uploads from API projects that haven't passed its
+  [API audit](https://support.google.com/youtube/contact/yt_api_form) private. After an audit you can
+  set `privacy = "unlisted"` or `"public"` for fully automatic publishing.
+* The phone sign-in's permission can't upload subtitle files. To have them uploaded too, sign in on
+  your own computer instead with a **Desktop app** OAuth client:
+  `python tools/youtube_upload.py auth --local`. That prints the refresh token to use as
+  `YOUTUBE_REFRESH_TOKEN`. Otherwise, add `out/<slug>.srt` in YouTube Studio (Subtitles → Upload file).
+* Upload by hand: `python tools/youtube_upload.py upload videos/<slug> [--privacy unlisted] [--dry-run]`.
+
 ## Running it by hand
 
 ```bash
