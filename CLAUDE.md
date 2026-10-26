@@ -28,6 +28,12 @@ Run tools with `.venv/bin/python` (or `source .venv/bin/activate` first).
 
 ## House style: what makes it feel like 3Blue1Brown
 
+0. **Keep the paper's framing (always; this outranks the rest).** Explain the paper the way
+   its authors framed it: their question, the order of their argument, their notation and
+   named quantities, their idealised cases, and their own physical explanations. Never
+   recast the work around a ratio, parameter, analogy or storyline of your own. The style
+   rules below govern *how* the paper's argument is shown, not *what* the argument is.
+   Your own extra insights go in `analysis.md` under "Notes beyond the paper", not in the video.
 1. **Question before answer.** Open on a concrete puzzle or a striking picture, not the
    abstract. Make the viewer want the result before you show it.
 2. **Show, then name.** The picture comes first and the notation second. Introduce a

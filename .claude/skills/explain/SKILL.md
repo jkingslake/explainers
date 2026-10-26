@@ -13,6 +13,16 @@ the mathematics built up piece by piece until the viewer could have derived it. 
 `CLAUDE.md` (the style guide and kit reference) and `examples/pilot/scenes.py` (a small,
 working reference video) before writing any scene code.
 
+**Keep the paper's framing. This rule overrides everything below.** The video explains the
+paper the way its authors framed it: their question and motivation, the order of their
+argument, their notation and symbol names, the quantities they define (for example a
+stability parameter), their idealised cases and simulations, and their own physical
+explanations of each result. Never recast the work around a new ratio, parameter,
+analogy, derivation or storyline of your own, however much simpler it seems. Visuals and
+the towel exist to illustrate the paper's own statements. If you spot another way of seeing
+a result, record it in `analysis.md` under "Notes beyond the paper" and keep it out of the
+script unless the user asks for it.
+
 Work through the phases in order. This runs end to end without stopping, **unless** the
 arguments contain `--review`: then stop after Phase 3, show the user the script, and wait.
 
@@ -50,7 +60,9 @@ Read **all** of `papers/<slug>/paper.md`, including appendices and supplementary
 If `papers/<slug>/source/` exists, read the `.tex` files: they hold the exact equations.
 Look at every page image in `papers/<slug>/pages/` that has a figure or a display equation.
 
-Then write `analysis.md`, the scientific backbone of the video. It must contain:
+Then write `analysis.md`, the scientific backbone of the video. Follow the paper's own
+structure, equation numbers and notation throughout, and explain each step the way the
+paper does. It must contain:
 
 1. **The question.** One paragraph: what problem, why it matters, what was unknown.
 2. **Takeaway.** The paper's main result in one sentence a curious 16-year-old would follow.
@@ -73,9 +85,11 @@ Then write `analysis.md`, the scientific backbone of the video. It must contain:
    in the video should come from this code, not from hand-drawn shapes. Note any
    mismatch with the paper.
 10. **Limitations and open questions.** Include those the authors state and those they don't.
-11. **Aha moments.** The 3 to 5 insights the video must land.
+11. **Aha moments.** The 3 to 5 insights the video must land, as the paper states them.
 12. **Likely confusions.** Places a smart viewer would get lost. These become the
     towel's questions.
+13. **Notes beyond the paper.** Anything you derived or noticed that the paper does not
+    say (reformulations, extra numbers, alternative intuitions). Not used in the video.
 
 When the paper is mostly empirical (data, not a model), the "model" is the analysis
 pipeline: what was measured, how it was processed, the statistical model, and why the
@@ -84,17 +98,21 @@ inference holds. Treat that with the same depth.
 ## Phase 3: Script → `videos/<slug>/script.md`
 
 Length: `video.target_minutes` from `explainer.toml` unless the user said otherwise
-(about 150 spoken words per minute). Default arc:
+(about 150 spoken words per minute). The scenes follow the paper's sections in the
+paper's order, using its terms. Default arc:
 
-1. **Cold open** (30 to 60 s): a striking visual and the question, with no title yet.
+1. **Cold open** (30 to 60 s): the paper's own motivation (its observations or question)
+   as a striking visual, with no title yet.
 2. **Title card** (`self.title_card(...)`).
-3. **The setup**: the physical system, built visually.
-4. **Building the model**: one assumption or term at a time, each paired with a picture.
-5. **The analysis**: derivations, shown as a sequence of transformations.
-6. **Results**: animated from `model.py`, with sliders or parameter sweeps where they
-   build intuition.
-7. **Caveats and open questions**: honest and specific.
-8. **Recap**: the aha moments in 3 or 4 lines, then the end card (`self.end_card(...)`).
+3. **The setup**: the physical system as the paper describes it, built visually.
+4. **Building the model**: the paper's equations in its order, one assumption or term at a
+   time, each paired with a picture.
+5. **The analysis**: the paper's derivations and the quantities it defines, shown as a
+   sequence of transformations.
+6. **Results**: the paper's cases and simulations, animated from `model.py`, with sliders
+   or parameter sweeps where they build intuition.
+7. **Caveats and open questions**: the limitations the paper discusses.
+8. **Recap**: the paper's conclusions in 3 or 4 lines, then the end card (`self.end_card(...)`).
 
 For each scene write: `## SceneName — chapter title`, target duration, and then
 alternating **Narration** (the exact words to be spoken) and **Visual** (what is on

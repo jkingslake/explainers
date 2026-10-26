@@ -12,6 +12,7 @@ dependencies = [
     "sympy>=1.13",
     "requests>=2.32",
     "pymupdf>=1.24",
+    "pillow<13",  # manim 0.22 ImageMobject rendering breaks on Pillow 13 (Image.fromarray mode=)
 ]
 
 [tool.uv]
