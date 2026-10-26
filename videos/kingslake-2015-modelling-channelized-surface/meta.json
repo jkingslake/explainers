@@ -1,0 +1,17 @@
+{
+  "doi": "10.3189/2015JoG14J158",
+  "url": "https://doi.org/10.3189/2015JoG14J158",
+  "title": "Modelling channelized surface drainage of supraglacial lakes",
+  "authors": [
+    "J. Kingslake",
+    "F. Ng",
+    "A. Sole"
+  ],
+  "year": "2015",
+  "venue": "Journal of Glaciology",
+  "abstract": "AbstractSupraglacial lakes can drain to the bed of ice sheets, affecting ice dynamics, or over their surface, relocating surface water. Focusing on surface drainage, we first discuss observations of lake drainage. In particular, for the first time, lakes are observed to drain &gt;70 km across the Nivlisen ice shelf, East Antarctica. Inspired by these observations, we develop a model of lake drainage through a channel that incises into an ice-sheet surface by frictional heat dissipated in the flow. Modelled lake drainage can be stable or unstable. During stable drainage, the rate of lake-level drawdown exceeds the rate of channel incision, so discharge from the lake decreases with time; this can prevent the lake from emptying completely. During unstable drainage, discharge grows unstably with time and always empties the lake. Model lakes are more prone to drain unstably when the initial lake area, the lake input and the channel slope are larger. These parameters will vary during atmospheric-warming-induced ablation-area expansion, hence the mechanisms revealed by our analysis can influence the dynamic response of ice sheets to warming through their impact on surface-water routing and storage.",
+  "pdf_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/E5154217B4D0307A242FE37C958F228E/S0022143000203699a.pdf/div-class-title-modelling-channelized-surface-drainage-of-supraglacial-lakes-div.pdf",
+  "source_input": "10.3189/2015JoG14J158",
+  "pages": 15,
+  "has_latex_source": false
+}

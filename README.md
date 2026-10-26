@@ -4,8 +4,17 @@ Claude-generated explainer videos of my papers and other papers, in the style of
 3Blue1Brown: narrated Manim animations that build the mathematical model up from
 intuition, starring a small towel with a face.
 
+## Videos
+
+| Paper | Video |
+|---|---|
+| Kingslake, Ng & Sole (2015), *Modelling channelized surface drainage of supraglacial lakes*, J. Glaciol. | [`videos/kingslake-2015-modelling-channelized-surface`](videos/kingslake-2015-modelling-channelized-surface) |
+
 **Reference pilot:** [`examples/pilot/out/pilot.mp4`](examples/pilot/out/pilot.mp4) is a
 2-minute taste of Schoof (2007) on marine ice sheet instability.
+
+Every video keeps the paper's own framing: its question, order of argument, notation and
+explanations (see `CLAUDE.md`).
 
 ## Making a video
 
