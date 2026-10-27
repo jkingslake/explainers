@@ -130,6 +130,37 @@ Narration is read aloud by a text-to-speech voice, so write it for the ear:
 If `--review` was given, stop here. Show the user the scene list with durations and the
 first two scenes in full, and ask for changes.
 
+## Phase 3b: Ask how to say uncertain words
+
+The voice can't ask, so you do, once, before any audio is rendered. This is the one pause in
+an otherwise automatic run, so do it straight after the script (with `--review`, ask in the
+same message as the script review).
+
+```bash
+python tools/pronounce.py check videos/<slug> --audio
+```
+
+It lists every narration word or phrase not yet settled in `explainer.toml`: names and places,
+acronyms, Greek letters (British and American readings differ) and spoken symbols such as
+"h L" or "d zeta by d t". It also writes `build/<slug>/pronounce/check.mp3`, where the voice
+reads each numbered item and then the phrase it sits in. Add anything else you aren't sure of,
+such as authors' names. If the list is empty, skip this phase.
+
+1. Send the clip to the user (SendUserFile) and ask with AskUserQuestion: put the numbered list
+   in the question, offer "All sound right" and "I'll list the ones to fix", and say they can
+   reply with corrections like `2 = NIV-lee-sen, 14 = ZEE-ta`.
+2. For each correction, turn it into a plain respelling the voice will read (syllables
+   separated by spaces or hyphens, stressed syllable in capitals if they gave one), preview it
+   with `python tools/pronounce.py say "<word>" "<respelling>" --context "<phrase>"` when unsure,
+   then record it: `python tools/pronounce.py set "<word>" "<respelling>"`.
+3. Record everything else as fine: `python tools/pronounce.py ok "<word>" ...`.
+4. If nobody can answer (a non-interactive run), carry on with the voice's defaults and list the
+   unchecked words in the final summary.
+
+Both lists live in `explainer.toml`, so a word is only ever asked about once per channel.
+Subtitles keep the written spelling. Before the final render, run `check` again; if the script
+changed and new words appeared, ask about those too.
+
 ## Phase 4: Animate → `videos/<slug>/scenes.py`
 
 * `from manim import *` and `from explainer_kit import *`; put `PALETTE` at the top; end

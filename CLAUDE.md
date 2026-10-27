@@ -19,6 +19,7 @@ tools/fetch_paper.py    paper → papers/<slug>/ (pdf, text, page images, LaTeX 
 tools/render.py         parallel render + stitch → videos/<slug>/out/<slug>.mp4 + .srt + chapters
 tools/frames.py         contact sheets of a render, for visual review
 tools/youtube_upload.py upload a finished video to YouTube (title/description from its README)
+tools/pronounce.py      find words the voice may mispronounce; listening clip; record fixes
 scripts/setup.sh        installs everything (apt, uv env, Kokoro TTS model)
 inbox/                  drop PDFs here (e.g. paywalled papers)
 papers/<slug>/          fetched material (git-ignored)
@@ -114,6 +115,12 @@ Set in `explainer.toml`: `kokoro` (free, local, the default), `elevenlabs` (best
 and it can clone the channel owner's voice; needs `ELEVENLABS_API_KEY`), `openai`, or `silent`
 (fast layout drafts: `tools/render.py --silent`). Changing the voice re-synthesises
 everything on the next render; the cache is keyed on text and voice settings.
+
+Pronunciation: never guess how the channel owner wants a name, place, Greek letter or
+symbol said. `tools/pronounce.py check videos/<slug> --audio` lists the unsettled words and
+makes a listening clip; ask the user about them (skill Phase 3b) and record the answers with
+`pronounce.py set` (respelling) or `pronounce.py ok` (fine as written). They are stored in
+`[pronunciations]` and `[pronunciations_ok]` in `explainer.toml` and apply to every video.
 
 ## Conventions
 

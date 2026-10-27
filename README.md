@@ -45,6 +45,9 @@ Claude then works through these steps on its own:
    It re-implements the model in `model.py`, so the animations come from real simulations.
 3. **Script** it (`script.md`): cold open, title, building the model, analysis, results,
    caveats and recap, with the towel asking the questions a viewer would ask.
+   **Then it asks you** how to say any names, places, Greek letters or symbols it isn't
+   sure of. You get a short clip of the voice reading each one; reply "all fine" or with
+   corrections like `2 = NIV-lee-sen`. Answers are remembered, so each word is asked about once.
 4. **Animate** it (`scenes.py`) with the shared kit in `explainer_kit/`.
 5. **Review** draft renders frame by frame (contact sheets) and fix layout and timing.
 6. **Render** at 1080p with narration, subtitles (`.srt`) and YouTube chapters, then commit it.
@@ -61,8 +64,11 @@ tried. Download the PDF yourself, put it in `inbox/`, and run `/explain inbox/<f
     `ELEVENLABS_API_KEY` and `elevenlabs_voice_id`.
   * `openai` and `silent` (no audio) are also available.
 * `voice.kokoro_voice`: try `am_michael`, `bm_george`, `bm_fable`, `af_heart` or `bf_emma`.
-* `[pronunciations]`: add a table such as `"Kingslake" = "Kings lake"` to fix how the voice
-  says a word; subtitles keep the original spelling.
+* `[pronunciations]`: how the voice should say particular words, e.g. `"Nivlisen" = "NIV lee sen"`
+  (subtitles keep the original spelling). `[pronunciations_ok]` lists words checked and fine
+  as written. Both are filled in from your answers to the pronunciation question, or by hand
+  with `tools/pronounce.py set` / `ok`. Preview a respelling with
+  `.venv/bin/python tools/pronounce.py say "Nivlisen" "NIV lee sen"`.
 * `video.target_minutes` and `video.fps`.
 * `[mascot]`: the towel's colours.
 

@@ -14,6 +14,7 @@ APT_PACKAGES=(
   fonts-cmu                                          # Computer Modern for Text()
   espeak-ng                                          # phonemizer for Kokoro TTS
   poppler-utils                                      # pdftotext / pdftoppm
+  wamerican wbritish                                 # word lists for the pronunciation check
 )
 MODEL_DIR=".cache/kokoro"
 MODEL_URL="https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0"
