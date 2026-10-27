@@ -49,3 +49,11 @@ playlist_id = ""                  # optional: add every upload to this playlist
 # ElevenLabs (which may be a clone of a real voice); set true or false to override.
 synthetic_media = "auto"
 description_footer = "Explained by {channel}. Animated with Manim; script and animation drafted with Claude; narrated by a text-to-speech voice."
+
+[pronunciations]
+# written = how the voice should say it (subtitles keep the written form)
+"Nivlisen" = "Nivlissen"
+
+[pronunciations_ok]
+# checked by ear and fine as written; not asked about again
+words = ["Glaciology", "alpha", "beta", "d h L by d t", "d zeta by d t", "f R", "h C", "h L", "Lambda", "Lambda C", "p L", "phi b", "zeta"]

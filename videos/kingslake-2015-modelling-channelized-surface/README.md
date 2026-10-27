@@ -4,7 +4,7 @@ Kingslake, J., Ng, F. and Sole, A. (2015). *Modelling channelized surface draina
 Journal of Glaciology, 61(225), 185–199. https://doi.org/10.3189/2015JoG14J158
 
 Video: [`out/kingslake-2015-modelling-channelized-surface.mp4`](out/kingslake-2015-modelling-channelized-surface.mp4)
-(11:45, 1080p30, 35 MB) · subtitles: `out/kingslake-2015-modelling-channelized-surface.srt`
+(11:47, 1080p30, 33 MB) · subtitles: `out/kingslake-2015-modelling-channelized-surface.srt`
 
 The video follows the paper's own framing and order: the observations that motivate it, the model
 (Section 3), the drainage stability analysis built on the stability parameter Λ (Section 4), the numerical
@@ -34,17 +34,17 @@ Tags: glaciology, supraglacial lakes, ice sheets, Greenland, Antarctica, meltwat
 0:54 The model lake
 1:48 From the lake into the channel
 2:26 Friction and gravity
-3:07 Melting the channel
+3:08 Melting the channel
 3:36 Two competing mechanisms
 4:25 Stable and unstable drainage
-5:29 What controls stability
-6:36 Stopping with water left behind
-7:17 Lakes that narrow as they drain
-7:50 Lakes that keep filling
-8:30 Four simulations
-9:38 Exploring parameter space
-10:19 Limitations and implications
-11:15 Conclusions
+5:30 What controls stability
+6:37 Stopping with water left behind
+7:18 Lakes that narrow as they drain
+7:52 Lakes that keep filling
+8:32 Four simulations
+9:40 Exploring parameter space
+10:20 Limitations and implications
+11:16 Conclusions
 ```
 
 ## Files
