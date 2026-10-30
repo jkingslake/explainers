@@ -1,0 +1,236 @@
+1
+00:00:00,000 --> 00:00:06,336
+Every summer, meltwater collects in hollows on the surface of the Greenland ice sheet, forming lakes.
+
+2
+00:00:06,668 --> 00:00:17,292
+These two satellite images were taken a week apart. In that week, lake B drained across the ice surface into lake A. And lake C drained away completely.
+
+3
+00:00:18,631 --> 00:00:30,642
+In East Antarctica, we found lakes near the grounding line of the ice sheet draining across the Nivlisen ice shelf, with water travelling up to seventy kilometres, nearly every summer.
+
+4
+00:00:31,965 --> 00:00:47,453
+Lakes can drain down to the bed of an ice sheet, or over its surface, through a channel that the flowing water melts into the ice. We wanted to understand that surface drainage. When does it fizzle out, and when does it run away and empty the lake?
+
+5
+00:00:47,867 --> 00:00:52,731
+That's the question of our twenty fifteen paper in the Journal of Glaciology.
+
+6
+00:00:54,100 --> 00:00:59,796
+Here is our model. A lake of depth h L drains through a channel cut into the ice surface.
+
+7
+00:01:00,121 --> 00:01:08,462
+We ignore the length of the channel, and assume the discharge is controlled at a single point near the lake, which we call the lake outlet.
+
+8
+00:01:08,790 --> 00:01:20,993
+The bottom of the channel there sits at a height h C above the lake bed. Drainage begins when a dam of wet snow in the channel fails, and water starts to flow, with discharge Q.
+
+9
+00:01:22,329 --> 00:01:36,260
+The lake's shape is described by a single parameter, p L. A lake with vertical walls has p L equal to one. Bowl shaped lakes have p L between one and three, and a cone has p L of three.
+
+10
+00:01:36,607 --> 00:01:47,637
+Water conservation then tells us how the lake depth changes: d h L by d t equals the input minus the discharge, divided by the lake's area.
+
+11
+00:01:48,633 --> 00:01:57,060
+To find the discharge, we follow the water along a streamline on its surface, from the still body of the lake out into the channel.
+
+12
+00:01:57,405 --> 00:02:08,712
+Bernoulli's equation says that height plus velocity squared over two g stays the same. So the lake level equals the height of the water in the channel, plus the velocity head.
+
+13
+00:02:10,039 --> 00:02:25,804
+With discharge equal to velocity times width times depth, this gives the classic curve from open channel hydraulics. It has a subcritical branch and a supercritical branch, which meet at a critical point where the discharge is greatest.
+
+14
+00:02:26,667 --> 00:02:32,661
+Bernoulli alone doesn't fix the flow. We also balance the forces on the water in the channel.
+
+15
+00:02:32,998 --> 00:02:41,489
+Friction from the ice, set by the hydraulic roughness f R, balances the pull of gravity along the channel slope, phi b.
+
+16
+00:02:41,806 --> 00:02:50,019
+That gives a second relationship between discharge and flow depth. Where it crosses the Bernoulli curve, both are satisfied.
+
+17
+00:02:50,366 --> 00:03:07,561
+For a rough, gently sloping channel, the crossing is on the subcritical branch, at A. For a steep, smooth channel it's supercritical, at B. In that case, we assume the flow passes through the critical point at the outlet, and use the critical flow equations instead.
+
+18
+00:03:08,067 --> 00:03:16,557
+Finally, the channel itself. We assume the lake is at zero degrees, so the only source of heat is friction in the turbulent flow.
+
+19
+00:03:16,875 --> 00:03:28,075
+The heat dissipated by that friction melts ice, and we assume it all goes into the channel bottom. So the channel bottom lowers at a rate proportional to the velocity cubed.
+
+20
+00:03:28,415 --> 00:03:35,348
+These assumptions are restrictive, but as we'll see, the model gives useful insight into how drainage works.
+
+21
+00:03:36,767 --> 00:03:42,911
+Now the analysis. Define zeta as the height of the lake surface above the bottom of the channel.
+
+22
+00:03:43,230 --> 00:03:49,246
+Combining Bernoulli and the force balance, the flow velocity squared is proportional to zeta.
+
+23
+00:03:49,569 --> 00:03:58,507
+So both the channel incision rate and the discharge go like zeta to the power three halves, with coefficients we call alpha and beta.
+
+24
+00:03:58,847 --> 00:04:09,321
+Putting these into the lake equation reduces the whole model to two ordinary differential equations. And subtracting them tells us how zeta changes.
+
+25
+00:04:09,655 --> 00:04:24,781
+This equation contains the two competing mechanisms that control drainage. The first term is the lake level changing, because of the imbalance between input and discharge. The second is the channel incising into the ice.
+
+26
+00:04:25,900 --> 00:04:37,591
+Start with the simplest lake: vertical walls, and no input of water. Then d zeta by d t is zeta to the three halves, times alpha minus beta over the lake area.
+
+27
+00:04:37,914 --> 00:04:41,840
+We call that bracket the drainage stability parameter, Lambda.
+
+28
+00:04:42,181 --> 00:05:00,997
+If Lambda is positive, zeta grows. The channel incises faster than the lake surface is drawn down. And since discharge increases with zeta, there's a positive feedback, and the discharge grows unboundedly. We call this unstable drainage. The lake always empties.
+
+29
+00:05:01,315 --> 00:05:11,576
+If Lambda is negative, the lake surface is drawn down faster than the channel incises, so zeta and the discharge decrease. This is stable drainage.
+
+30
+00:05:11,905 --> 00:05:29,206
+The equation can be solved exactly. Here's the discharge over time for lakes of different areas, with a two metre wide channel sloping at one percent. Above about six square kilometres, Lambda is positive, and discharge grows. Below, it decays.
+
+31
+00:05:30,500 --> 00:05:46,031
+So what controls stability? First, the lake area. For a given outflow, the channel incision rate doesn't depend on the lake's area. But the larger the lake, the slower its level drops. So larger lakes encourage unstable drainage.
+
+32
+00:05:47,358 --> 00:06:01,097
+A steeper channel makes the water flow faster, which speeds up both incision and drawdown. For drawdown this is partly compensated by a shallower flow, so the net effect is to promote unstable drainage.
+
+33
+00:06:01,401 --> 00:06:12,729
+A wider channel doesn't change the incision rate, but it carries more water for a given velocity, which speeds up drawdown. So wider channels promote stable drainage.
+
+34
+00:06:13,031 --> 00:06:28,263
+Interestingly, the roughness of the channel doesn't appear in the square brackets, so it doesn't affect stability. A smoother channel speeds the flow, but makes it shallower, and the lower shear stress means less heat for incision. The effects balance.
+
+35
+00:06:28,570 --> 00:06:36,250
+And the height of the snow dam doesn't appear at all. It sets how fast the lake drains, but not whether drainage is stable.
+
+36
+00:06:37,700 --> 00:06:44,036
+During stable drainage, does the lake empty? Let's plot the height of the channel bottom against zeta.
+
+37
+00:06:44,369 --> 00:06:51,110
+For our simple lake, every trajectory is a straight line, starting from the moment the snow dam fails.
+
+38
+00:06:51,429 --> 00:07:02,031
+If the line hits the vertical axis, zeta reaches zero. The lake surface has fallen to the channel bottom, the flow stops, and water is left in the lake.
+
+39
+00:07:02,336 --> 00:07:17,334
+If it hits the horizontal axis first, the channel has cut down to the lake bed, and the lake empties. The dividing line is a critical value, Lambda C. Between Lambda C and zero, drainage is stable, but still complete.
+
+40
+00:07:18,800 --> 00:07:32,283
+Real lakes aren't vertically walled. Usually, the fuller a lake is, the larger its area. Then the lake area in the stability parameter is replaced by the current area, which shrinks as the lake drains.
+
+41
+00:07:32,609 --> 00:07:50,934
+Whether drainage starts stable or unstable doesn't depend on the lake's shape. But as the area shrinks, the lake level falls faster for the same discharge, and catches up with the channel. Drainage always stabilises, and for more cone shaped lakes it halts before the lake is empty.
+
+42
+00:07:52,167 --> 00:08:01,447
+Finally, a vertically walled lake that receives meltwater. If Lambda is positive, drainage is unstable and the lake empties, as before.
+
+43
+00:08:01,763 --> 00:08:17,165
+If Lambda is negative, zeta no longer decays to zero. It relaxes to a positive value, because the input keeps the lake surface above the bottom of the channel. So incision continues until the lake is completely empty.
+
+44
+00:08:17,492 --> 00:08:30,974
+The discharge settles at a value larger than the input. And the larger the input, the faster the lake drains, because a higher input maintains a deeper flow in the channel, which incises faster.
+
+45
+00:08:32,033 --> 00:08:43,319
+Now the full model, solved numerically, including critical flow when it occurs. We use a ten metre deep lake, a two metre wide channel, and a one metre snow dam.
+
+46
+00:08:43,667 --> 00:09:00,285
+In simulation one, a one square kilometre lake with a gently sloping channel drains stably. The discharge starts at two point eight cubic metres per second and falls. After a hundred days the lake has dropped only about a metre, and drainage stops.
+
+47
+00:09:00,633 --> 00:09:12,879
+In simulation two, a three square kilometre lake with a steeper channel drains unstably. The discharge grows, and after twenty two days the channel has cut down to the lake bed.
+
+48
+00:09:14,200 --> 00:09:25,869
+In simulation three, the small lake gets a steady input of five cubic metres per second. The discharge rises to about six, and the lake drains stably but completely.
+
+49
+00:09:26,200 --> 00:09:39,064
+In simulation four, the large lake is cone shaped. Discharge grows for eleven days, peaks, and falls as the shrinking lake stabilises, and drainage ends with water left in the lake.
+
+50
+00:09:40,200 --> 00:09:50,227
+Running the model for a year across many lake areas and channel slopes maps out where lakes empty. The boundary follows the curve where Lambda is zero.
+
+51
+00:09:50,557 --> 00:10:06,472
+Lakes observed in Greenland average about point eight square kilometres, and reach seventeen. In our model, the average lake drains stably whatever the slope, while the largest lakes drain unstably on all but the gentlest channels.
+
+52
+00:10:06,789 --> 00:10:19,504
+On slopes steeper than about three percent the flow becomes critical, and the slope stops mattering. And changing the snow dam height changes how fast lakes drain, but never moves the boundary.
+
+53
+00:10:20,767 --> 00:10:39,988
+The model has important limitations. It ignores variation along the channel, the heat carried by the lake water, changes in channel width, ice flow, and drainage through more than one channel. And it assumes drainage starts with a snow dam, rather than water overtopping the lake's basin.
+
+54
+00:10:41,333 --> 00:10:56,842
+Still, it has implications. As the climate warms, lakes will form further inland on the Greenland ice sheet. There they tend to be larger, which favours unstable drainage, but channel slopes are lower, which has the opposite effect.
+
+55
+00:10:57,191 --> 00:11:04,316
+Surface drainage also slows the delivery of lake water to the bed, which can reduce the ice sheet's response.
+
+56
+00:11:05,654 --> 00:11:15,808
+And on Nivlisen, the most rapid drainage seems to come from some of the largest lakes, where the surface slope is greatest. That is consistent with our theory.
+
+57
+00:11:16,800 --> 00:11:27,637
+To sum up. Surface drainage of a supraglacial lake is a competition between lake drawdown and channel incision, and its stability is set by the sign of Lambda.
+
+58
+00:11:27,937 --> 00:11:39,734
+Lakes are more prone to drain unstably, and empty completely, when their area, their input and their channel slope are larger. And lakes with an input always drain completely.
+
+59
+00:11:40,733 --> 00:11:44,381
+Thanks for watching. The paper itself is linked below.
+

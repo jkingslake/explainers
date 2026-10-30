@@ -1,0 +1,59 @@
+# Channel-wide settings. Every video reads this file.
+
+[channel]
+# Shown on every title card ("An explainer by ...") and end card.
+name = "J. Kingslake"
+tagline = "Papers, explained."
+
+[voice]
+# Narration engine:
+#   "kokoro"     free, offline, good quality (default; model downloaded by scripts/setup.sh)
+#   "elevenlabs" best quality, can be a clone of your own voice; needs ELEVENLABS_API_KEY
+#   "openai"     needs OPENAI_API_KEY
+#   "silent"     no audio, timings estimated from word count (fast layout drafts)
+engine = "kokoro"
+speed = 1.0
+# Kokoro voices: af_heart, af_bella, bf_emma, am_michael, am_fenrir, bm_george, bm_fable ...
+kokoro_voice = "am_michael"
+elevenlabs_voice_id = ""          # e.g. the ID of your cloned voice
+elevenlabs_model = "eleven_multilingual_v2"
+openai_voice = "onyx"
+openai_model = "gpt-4o-mini-tts"
+
+[video]
+# Manim quality: "l" 480p, "m" 720p, "h" 1080p, "k" 4K.
+final_quality = "h"
+draft_quality = "l"
+fps = 30                          # final renders; 3b1b uses 60 (twice the render time)
+target_minutes = 12
+
+[mascot]
+# The little towel that plays the role of 3b1b's pi creatures.
+name = "Towel"
+color = "#5CD0B3"
+stripe_color = "#F7F2E8"
+
+[youtube]
+# Finished videos are uploaded with `python tools/youtube_upload.py upload videos/<slug>`;
+# the /explain pipeline does it automatically once credentials are set up
+# (README, "Publishing to YouTube"). Set enabled = false to stop automatic uploads.
+enabled = true
+# private | unlisted | public. YouTube forces uploads from API projects that haven't passed
+# its API audit to private, so review and publish them in YouTube Studio.
+privacy = "private"
+category_id = 27                  # Education (28 = Science & Technology)
+language = "en"
+tags = ["science", "explainer", "research paper", "maths", "manim"]
+playlist_id = ""                  # optional: add every upload to this playlist
+# Altered or synthetic content disclosure. "auto" discloses when the narration is
+# ElevenLabs (which may be a clone of a real voice); set true or false to override.
+synthetic_media = "auto"
+description_footer = "Explained by {channel}. Animated with Manim; script and animation drafted with Claude; narrated by a text-to-speech voice."
+
+[pronunciations]
+# written = how the voice should say it (subtitles keep the written form)
+"Nivlisen" = "Nivlissen"
+
+[pronunciations_ok]
+# checked by ear and fine as written; not asked about again
+words = ["Glaciology", "alpha", "beta", "d h L by d t", "d zeta by d t", "f R", "h C", "h L", "Lambda", "Lambda C", "p L", "phi b", "zeta"]
